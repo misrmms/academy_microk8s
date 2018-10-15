@@ -10,9 +10,9 @@ spec:
     containers:
     -   name: flask-pod
         image: localhost:32000/simple-docker 
-        command:
-            - sleep
-            - "3600"
+#        command:
+#            - sleep
+#            - "3600"
         imagePullPolicy: IfNotPresent
         ports:
         -   containerPort: 5000
