@@ -18,6 +18,6 @@ spec:
         spec:
             containers:
             -   name: flask-server
-                image: localhost:3200/simple:teslocal
+                image: localhost:32000/simple:teslocal
                 ports:
                 -   containerPort: 5000
