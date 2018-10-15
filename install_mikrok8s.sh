@@ -35,6 +35,7 @@ sudo snap list
 #snap alias microk8s.kubectl kubectl
 
 # Write Config File for Kubectrl
+mkdir $HOME/.kube
 /var/lib/snapd/snap/bin/microk8s.kubectl config view --raw > $HOME/.kube/config
 
 # Set Path Variable
@@ -50,6 +51,8 @@ alias docker='sudo /usr/bin/docker -H unix:///var/snap/microk8s/current/docker.s
 export PATH=$PATH:/var/lib/snapd/snap/bin/
 
 EOF
+
+sleep 60
 
 # Services enablen
 /var/lib/snapd/snap/bin/microk8s.enable dashboard dns registry metrics-server ingress storage 
