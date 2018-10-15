@@ -18,6 +18,9 @@ microk8s installs a barebones upstream Kubernetes. This means just the api-serve
 Additional services like kube-dns and dashboard can be run using the microk8s.enable command. <br>
     > microk8s.enable dns dashboard
 <P>
+<h2>User Interface</h2>
+   URL http://127.0.0.1:8080/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+
 <h2>Information of Kubernetes Installation</h2><br>
     >  microk8s.kubectl cluster-info<br>
 
@@ -38,6 +41,13 @@ Additional services like kube-dns and dashboard can be run using the microk8s.en
     > microk8s.kubectl get all<br>
     > microk8s.kubectl delete svc/nginx
 <p>
+<h2>Troubleshoot microk8s</h2><br>
+    > microk8s.inspect
+<p>
+<h2>Restart microk8s</h2><br>
+    > sudo snap disable microk8s
+    > sudo snap enable microk8s
+<P>
 <h2>Remove microk8s</h2><br>
     > microk8s.disable dashboard dns<br>
     > sudo snap remove microk8s<br>
