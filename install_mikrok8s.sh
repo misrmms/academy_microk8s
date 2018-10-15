@@ -10,6 +10,11 @@
 sudo bash -c "echo $(/sbin/ifconfig eth0 | grep 'inet' | cut -d: -f2 | awk '{ print $2}') ' '  $(hostname -f ) ' ' $(hostname -s) >> /etc/hosts"
 sudo bash -c "echo ' ' >> /etc/hosts"
 
+# Allow sshd Port and TCP Forwarding
+sudo bash -c "sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/g' /etc/ssh/sshd_config"
+sudo bash -c "sed -i 's/GatewayPorts no/GatewayPorts yes/g' /etc/ssh/sshd_config"
+sudo systemctl restart sshd
+
 # Install kubectl
 curl -Lo ~/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
 chmod +x ~/bin/kubectl
