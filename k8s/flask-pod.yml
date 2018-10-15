@@ -8,6 +8,6 @@ metadata:
 spec:
     containers:
     -   name: flask-pod
-        image: localhost:3200/simple:testlocal  
+        image: localhost:32000/simple:testlocal  
         ports:
         -   containerPort: 5000
