@@ -11,7 +11,7 @@ spec:
     replicas: 3
     selector:
         name: flask-server
-    remplate:
+    template:
         metadata:
             labels:
                 name: flask-server
