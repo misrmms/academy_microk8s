@@ -6,6 +6,10 @@
 # Created on 10.10.2018, 10:28:38
 #
 
+# Update /etc/hosts
+sudo bash -c "echo $(/sbin/ifconfig eth0 | grep 'inet' | cut -d: -f2 | awk '{ print $2}') ' '  $(hostname -f ) ' ' $(hostname -s) >> /etc/hosts"
+sudo bash -c "echo ' ' >> /etc/hosts"
+
 # Install kubectl
 curl -Lo ~/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
 chmod +x ~/bin/kubectl
