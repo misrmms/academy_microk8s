@@ -1,10 +1,11 @@
 ## flask-controller.yaml
-## Configuration for Replication Controller K8S 
+## Configuration for Replication Controller K8S
 ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
     name: flask-server
+    namespace: default
     labels:
         name: flask-server
 spec:
@@ -18,6 +19,12 @@ spec:
         spec:
             containers:
             -   name: flask-server
-                image: localhost:32000/simple:teslocal
+                image: localhost:32000/simple-docker
+                imagePullPolicy: IfNotPresent
                 ports:
                 -   containerPort: 5000
+            restartPolicy: Always
+
+                
+                
+                
