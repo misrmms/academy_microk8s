@@ -1,0 +1,13 @@
+## flask-pod.yaml
+## Input File for K8S to create Docker Container 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: flask-pod
+spec:
+    containers:
+    -   name: flask-pod
+        image: localhost:3200/simple:teslocal  
+        ports:
+        -   containerPort: 5000
