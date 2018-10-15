@@ -1,0 +1,16 @@
+## flask-service.yaml
+## Configuration for a service for flask container on K8S 
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: flask-server
+    labels:
+        name: flask-server
+spec:
+    type: LoadBalancer
+    ports:
+    -   port: 5000
+    selector:
+        name: flask-server
+        
