@@ -44,7 +44,8 @@ export PATH=$PATH:/var/lib/snapd/snap/bin/
 cat >> .bashrc <<- EOF
 # Some aliases
 unalias ls 2>/dev/null
-alias docker='/var/lib/snapd/snap/bin/microk8s.docker'
+#alias docker='/var/lib/snapd/snap/bin/microk8s.docker'
+alias docker='sudo /usr/bin/docker -H unix:///var/snap/microk8s/current/docker.sock'
 
 export PATH=$PATH:/var/lib/snapd/snap/bin/
 
