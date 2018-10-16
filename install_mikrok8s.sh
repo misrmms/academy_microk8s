@@ -47,6 +47,7 @@ sudo snap list
 export PATH=$PATH:/var/lib/snapd/snap/bin/
 
 # Change .bashrc
+cd
 cat >> .bashrc <<- EOF
 
 # Some aliases
