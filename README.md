@@ -1,5 +1,5 @@
 # academy_microk8s
-<h1>Installation Script for microk8s   xx</h1>
+<h1>Installation Script for microk8s</h1>
 <P>
 In short, microk8s is designed to be a fast and lightweight upstream Kubernetes 
 install isolated from your host but not via a virtual machine. This isolation is
