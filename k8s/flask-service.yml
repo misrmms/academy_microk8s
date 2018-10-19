@@ -1,4 +1,4 @@
-## flask-service.yaml
+## flask-service.yml
 ## Configuration for a service for flask container on K8S 
 ---
 apiVersion: v1
