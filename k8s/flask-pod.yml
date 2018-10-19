@@ -1,4 +1,4 @@
-## flask-pod.yaml
+## flask-pod.yml
 ## Input File for K8S to create Docker Container 
 ---
 apiVersion: v1
