@@ -19,7 +19,7 @@ Additional services like kube-dns and dashboard can be run using the microk8s.en
     > microk8s.enable dns dashboard
 <P>
 <h2>User Interface</h2>
-   URL http://127.0.0.1:8080/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+   URL http://127.0.0.1:80/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
 
 <h2>Information of Kubernetes Installation</h2><br>
     >  microk8s.kubectl cluster-info<br>
