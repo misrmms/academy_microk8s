@@ -1,4 +1,4 @@
-## flask-controller.yaml
+## flask-controller.yml
 ## Configuration for Replication Controller K8S
 ---
 apiVersion: v1
