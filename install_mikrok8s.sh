@@ -21,17 +21,17 @@ chmod +x ~/bin/kubectl
 sudo mv ~/bin/kubectl /usr/bin/
 
 # Install kubectl Bash-compleation 
-sudo yum -y install bash-completion
+#sudo yum -y install bash-completion
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 
 # Install SNAP
 # https://computingforgeeks.com/install-snapd-snap-applications-centos-7/
-sudo yum -y install epel-release
-sudo yum -y install yum-plugin-copr
-sudo yum -y copr enable ngompa/snapcore-el7
-sudo yum -y install snapd
-sudo systemctl enable --now snapd.socket
-sudo ln -s /var/lib/snapd/snap /snap
+#sudo yum -y install epel-release
+#sudo yum -y install yum-plugin-copr
+#sudo yum -y copr enable ngompa/snapcore-el7
+#sudo yum -y install snapd
+#sudo systemctl enable --now snapd.socket
+#sudo ln -s /var/lib/snapd/snap /snap
 
 # Install microk8s
 # https://microk8s.io/
@@ -44,23 +44,23 @@ sudo snap list
 #snap alias microk8s.kubectl kubectl
 
 # Set Path Variable
-export PATH=$PATH:/var/lib/snapd/snap/bin/
+#export PATH=$PATH:/var/lib/snapd/snap/bin/
 
 # Change .bashrc
-cd
-cat >> ~/.bashrc <<- EOF
+#cd
+#cat >> ~/.bashrc <<- EOF
 
-unalias ls 2>/dev/null
+#unalias ls 2>/dev/null
 #alias docker='/var/lib/snapd/snap/bin/microk8s.docker'
-alias docker='sudo /usr/bin/docker -H unix:///var/snap/microk8s/current/docker.sock'
+#alias docker='sudo /usr/bin/docker -H unix:///var/snap/microk8s/current/docker.sock'
 
-export PATH=$PATH:/var/lib/snapd/snap/bin/
+#export PATH=$PATH:/var/lib/snapd/snap/bin/
 
-EOF
+#EOF
 
 # Write Config File for Kubectrl
-mkdir $HOME/.kube
-/var/lib/snapd/snap/bin/microk8s.kubectl config view --raw > $HOME/.kube/config
+#mkdir $HOME/.kube
+#/var/lib/snapd/snap/bin/microk8s.kubectl config view --raw > $HOME/.kube/config
 
 
 
