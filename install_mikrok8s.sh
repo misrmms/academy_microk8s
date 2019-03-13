@@ -47,16 +47,16 @@ sudo snap list
 #export PATH=$PATH:/var/lib/snapd/snap/bin/
 
 # Change .bashrc
-#cd
-#cat >> ~/.bashrc <<- EOF
+cd
+cat >> ~/.bashrc <<- EOF
 
 #unalias ls 2>/dev/null
-#alias docker='/var/lib/snapd/snap/bin/microk8s.docker'
+alias docker='/var/lib/snapd/snap/bin/microk8s.docker'
 #alias docker='sudo /usr/bin/docker -H unix:///var/snap/microk8s/current/docker.sock'
 
 #export PATH=$PATH:/var/lib/snapd/snap/bin/
 
-#EOF
+EOF
 
 # Write Config File for Kubectrl
 #mkdir $HOME/.kube
