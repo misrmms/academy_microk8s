@@ -42,6 +42,7 @@ sudo snap list
 
 # Alias kubectl
 #snap alias microk8s.kubectl kubectl
+alias kubectl='microk8s.kubectl'
 
 # Set Path Variable
 #export PATH=$PATH:/var/lib/snapd/snap/bin/
@@ -51,7 +52,7 @@ cd
 cat >> ~/.bashrc <<- EOF
 
 #unalias ls 2>/dev/null
-alias docker='/var/lib/snapd/snap/bin/microk8s.docker'
+alias docker='microk8s.docker'
 #alias docker='sudo /usr/bin/docker -H unix:///var/snap/microk8s/current/docker.sock'
 
 #export PATH=$PATH:/var/lib/snapd/snap/bin/
