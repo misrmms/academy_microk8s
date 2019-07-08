@@ -15,6 +15,9 @@ sudo bash -c "sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/g' /etc/ssh
 sudo bash -c "sed -i 's/GatewayPorts no/GatewayPorts yes/g' /etc/ssh/sshd_config"
 sudo systemctl restart sshd
 
+# Uninstall docker
+sudo yum -y remove docker
+
 # Install kubectl
 curl -Lo ~/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x ~/bin/kubectl
@@ -26,17 +29,14 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
 
 # Install SNAP
 # https://computingforgeeks.com/install-snapd-snap-applications-centos-7/
-sudo yum -y install epel-release
-sudo yum -y install yum-plugin-copr
 sudo yum -y copr enable ngompa/snapcore-el7
-sudo yum -y install snapd
 sudo systemctl enable --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
 
 # Wait somehow - otherwise this happens:
 # error: too early for operation, device not yet seeded or device model not acknowledged
 sleep 60
-read -n1 -r -p "Press any key to continue..." key
+#read -n1 -r -p "Press any key to continue..." key
 sudo snap install hello-world
 
 # Install microk8s
